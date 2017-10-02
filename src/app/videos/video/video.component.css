@@ -1,0 +1,12 @@
+.img{
+  float: left;
+  margin: 5px;
+  border-radius: 20px;
+}
+.video-border{
+  border: solid 2px black;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 20px;
+}
+
