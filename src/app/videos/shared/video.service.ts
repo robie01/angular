@@ -16,5 +16,7 @@ export class VideoService {
     return this.http.
       get('http://localhost:5000/api/video').
     map(resp => resp.json() as Video[]);
+
+    // get('http://localhost:5000/api/video')
   }
 }
