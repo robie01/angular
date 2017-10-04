@@ -14,7 +14,7 @@ export class VideoService {
 
   getVideos(): Observable<Video[]> {
     return this.http.
-      get('http://localhost:5000/api/video').
+      get('http://videomenuapp.azurewebsites.net/api/video').
     map(resp => resp.json() as Video[]);
 
     // get('http://localhost:5000/api/video')
