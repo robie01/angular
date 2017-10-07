@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  restApiEndpoint: 'http://videomenuapp.azurewebsites.net/api'
 };
