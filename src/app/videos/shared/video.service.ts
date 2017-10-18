@@ -5,7 +5,7 @@ import {Video} from './video.model';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {map} from 'rxjs/operator/map';
+
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 
@@ -22,9 +22,10 @@ export class VideoService {
       (url);
   }
   getVideosById(id: number): Observable<Video> {
+    console.log('id: ' + id);
       return this.http
         .get<Video>
-        ( url + id);
+        ( url + '/' + id);
 
   }
 }

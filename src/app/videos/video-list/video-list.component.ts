@@ -31,12 +31,12 @@ export class VideoListComponent implements OnInit {
       }
     );
 
-    // this.videoFromVideoComponentTs = {title: 'Computer Science', about: 'security'};
+    // this.videoFromVideoComponentTs = {title: 'Computer Science', genres: 'security'};
 
   }
 
   details(video: Video) {
-    this.router.navigateByUrl('/video/' + video.id)
+    this.router.navigateByUrl('/video/' + video.id);
    // console.log('clicked' + video.id);
 
   }

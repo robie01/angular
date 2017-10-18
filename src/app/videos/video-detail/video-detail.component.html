@@ -1,3 +1,15 @@
-<p>
-  video-detail works!
-</p>
+<button routerLink="/videos"
+   routerLinkActive="active">Back
+</button>
+
+
+<div class="video-detail">
+  <img class="img" src="http://via.placeholder.com/128x128">
+  <h2>Id: {{video?.id}}</h2>
+  <h2>Title: {{video.title}}{{video.About}}</h2>
+  <p *ngFor= "let genre of video?.genres">
+  {{genre.Name}} {{genre.Author}} </p>
+</div>
+
+{{video | json}}
+
