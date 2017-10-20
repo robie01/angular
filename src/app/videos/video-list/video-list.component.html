@@ -1,5 +1,25 @@
-<h1>Videos</h1>
-<app-video
-  (click)="details(vid)"
-  *ngFor="let vid of videos"
-  [video]="vid"></app-video>
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+    <hr>
+    <h2>Videos</h2>
+    <hr>
+  </div>
+    <div class="col-md-12">
+      <div class="list-group">
+        <a (click)="details(video)" *ngFor="let video of videos" class="list-group-item list-group-item-action">
+        <img  class="img" src="http://via.placeholder.com/70x70">
+          <h5>{{video.title}}</h5>
+          <div class="pull-right">
+            <button class="btn-outline-danger" (click)="delete($event)">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
+            <button class="btn-outline-warning">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -36,9 +36,14 @@ export class VideoListComponent implements OnInit {
   }
 
   details(video: Video) {
+    console.log('details clicked');
     this.router.navigateByUrl('/video/' + video.id);
    // console.log('clicked' + video.id);
 
+  }
+  delete($event) {
+    console.log('delete clicked');
+    $event.stopPropagation();
   }
 
 }
