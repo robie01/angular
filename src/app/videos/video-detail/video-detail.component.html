@@ -1,15 +1,54 @@
-<button routerLink="/videos"
-   routerLinkActive="active">Back
-</button>
-
-
-<div class="video-detail">
-  <img class="img" src="http://via.placeholder.com/128x128">
-  <h2>Id: {{video?.id}}</h2>
-  <h2>Title: {{video.title}}{{video.About}}</h2>
-  <p *ngFor= "let genre of video?.genres">
-  {{genre.Name}} {{genre.Author}} </p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    <button
+      class="btn btn-success"
+      routerLink="/videos"
+      routerLinkActive="active">Back
+    </button>
+      <hr>
+  </div>
+    <div class="col-md-12">
+      <div class="card">
+        <h4 class="card-header">Video Details</h4>
+        <div class="card-body row">
+          <div class="col-md-4">
+          <img class="img" src="http://via.placeholder.com/150x150">
+          </div>
+          <div class="col-md-8">
+            <dl class="row">
+              <dt class="col-md-2">Title:</dt>
+              <dd class="col-md-10">{{video?.title}}</dd>
+            </dl>
+            <dl class="row">
+            <dt class="col-sm-2">About:</dt>
+            <dd class="col-sm-9">{{video?.About}}</dd>
+            </dl>
+            <dl class="row">
+              <dt class="col-sm-3">Genres:</dt>
+              <dd class="col-sm-9">
+                <ul class="list-unstyled">
+                  <li *ngFor="let genress of video?.genres">
+                    {{genress.Name}} {{genress.Author}}
+                  </li>
+                    </ul>
+              </dd>
+            </dl>
+            </div>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="pull-right">
+            <button class="btn btn-outline-danger">
+              <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <button class="btn btn-outline-warning">
+              <i class="fa fa-pencil" aria-hidden="true"></i>Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-{{video | json}}
+
 

@@ -1,10 +1,4 @@
-.img{
-  float: left;
+.img {
   margin: 5px;
-  border-radius: 20px;
-}
-.video-detail{
   border-radius: 10px;
-  padding: 5px;
-  margin: 15px;
 }
