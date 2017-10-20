@@ -6,7 +6,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
-import { VideoComponent } from './videos/video/video.component';
 import {VideoService} from './videos/shared/video.service';
 import { VideoListComponent } from './videos/video-list/video-list.component';
 import { VideoDetailComponent } from './videos/video-detail/video-detail.component';
@@ -29,7 +28,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    VideoComponent,
     VideoListComponent,
     VideoDetailComponent
   ],
