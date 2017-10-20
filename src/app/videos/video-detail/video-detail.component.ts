@@ -33,6 +33,7 @@ export class VideoDetailComponent implements OnInit {
   delete() {
     this.confirmDelete = true;
   }
+
   abortDelete() {
     this.confirmDelete = false;
   }

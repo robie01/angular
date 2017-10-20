@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {VideoService} from '../shared/video.service';
 import {Video} from '../shared/video.model';
 import {Router} from '@angular/router';
+import {switchMap} from 'rxjs/operator/switchMap';
 
 
 @Component({
@@ -12,6 +13,7 @@ import {Router} from '@angular/router';
 export class VideoListComponent implements OnInit {
 
   videos: Video[];
+  videoToDelete: Video;
 
   // inside parameter is the dependency injection.
   constructor(private videoService: VideoService,
@@ -41,9 +43,32 @@ export class VideoListComponent implements OnInit {
    // console.log('clicked' + video.id);
 
   }
-  delete($event) {
+  delete(video: Video, event) {
     console.log('delete clicked');
+    this.videoToDelete = video;
+    event.stopPropagation();
+  }
+  deleteAborted(event) {
+    this.videoToDelete = null;
+    event.stopPropagation();
+
+  }
+  deleteConfirm($event) {
+    this.videoService.delete(this.videoToDelete.id)
+      .switchMap(video => this.videoService.getVideos())
+        .subscribe(videos => {
+          this.videos = videos;
+        });
     $event.stopPropagation();
+
+
+     /* .subscribe(video => {
+          this.videoService.getVideos()
+            .subscribe(videos => {
+            this.videos = videos;
+            });
+      });*/
+
   }
 
 }
