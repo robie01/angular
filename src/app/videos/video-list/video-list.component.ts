@@ -70,5 +70,7 @@ export class VideoListComponent implements OnInit {
       });*/
 
   }
-
+  createVideo() {
+    this.router.navigateByUrl('/videos/create');
+  }
 }

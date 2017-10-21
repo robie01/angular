@@ -10,10 +10,14 @@ import {VideoService} from './videos/shared/video.service';
 import { VideoListComponent } from './videos/video-list/video-list.component';
 import { VideoDetailComponent } from './videos/video-detail/video-detail.component';
 import {RouterModule, Routes} from '@angular/router';
+import { VideoCreateComponent } from './videos/video-create/video-create.component';
 
 const appRoutes: Routes = [
   { path: 'video/:id',
     component: VideoDetailComponent},
+  {
+    path: 'videos/create',
+    component: VideoCreateComponent},
   {
     path: 'videos',
     component: VideoListComponent,
@@ -29,7 +33,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     VideoListComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    VideoCreateComponent
   ],
   imports: [
     BrowserModule,
