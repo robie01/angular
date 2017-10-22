@@ -10,10 +10,14 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class VideoCreateComponent implements OnInit {
 
+  videoGroup: FormGroup;
 
-  title = new FormControl();
-  about = new FormControl();
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.videoGroup = new FormGroup({
+      title: new FormControl(),
+      about: new FormControl()
+    });
+  }
 
   ngOnInit() {
   }

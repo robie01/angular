@@ -12,12 +12,18 @@
       <hr>
     </div>
     <div class="col-md-12">
-      <label class="center-block">Title:
-      <input class="form-control" [formControl]="title">
-      </label>
-      <label class="center-block">About:
-        <input class="form-control" [formControl]="about">
-      </label>
+      <form [formGroup]="videoGroup" novalidate>
+        <div class="form-group">
+          <label class="center-block">Title:
+          <input class="form-control" formControlName="title">
+          </label>
+          <label class="center-block">About:
+            <input class="form-control" formControlName="about">
+          </label>
+        </div>
+      </form>
+      {{videoGroup.value | json}}
+      {{videoGroup.status | json}}
     </div>
   </div>
 </div>
