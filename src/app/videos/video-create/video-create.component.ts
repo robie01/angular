@@ -13,6 +13,7 @@ import {Video} from '../shared/video.model';
 export class VideoCreateComponent implements OnInit {
 
   videoGroup: FormGroup;
+  videoCreatedSuccessfully= false;
 
   constructor(private router: Router, private fb: FormBuilder,
               private videoService: VideoService) {
@@ -37,6 +38,7 @@ export class VideoCreateComponent implements OnInit {
     this.videoService.create(video)
       .subscribe(videoo => {
         this.videoGroup.reset();
+        this.videoCreatedSuccessfully = true;
       });
   }
 

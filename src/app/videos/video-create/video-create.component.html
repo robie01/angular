@@ -25,6 +25,7 @@
           </button>
         </div>
       </form>
+      <ngb-alert *ngIf="videoCreatedSuccessfully" type="success">Video Created</ngb-alert>
       {{videoGroup.value | json}}
       {{videoGroup.status | json}}
     </div>
