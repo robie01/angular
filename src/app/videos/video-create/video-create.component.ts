@@ -35,7 +35,9 @@ export class VideoCreateComponent implements OnInit {
       genres: []
     };
     this.videoService.create(video)
-      .subscribe(videoo => console.log(video));
+      .subscribe(videoo => {
+        this.videoGroup.reset();
+      });
   }
 
 }
