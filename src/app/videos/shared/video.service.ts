@@ -31,8 +31,14 @@ export class VideoService {
   }
 
 
-  delete(id: number): Observable<Video>{
+  delete(id: number): Observable<Video> {
     return this.http
       .delete(url + '/' + id);
+  }
+
+  create(video: Video): Observable<Video> {
+    return this.http
+    // the <Video> is the object you want to return back into the front end system.
+      .post<Video>(url, video);
   }
 }

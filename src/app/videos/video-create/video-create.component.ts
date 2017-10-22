@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {VideoService} from '../shared/video.service';
+import {Video} from '../shared/video.model';
 
 
 @Component({
@@ -12,10 +14,10 @@ export class VideoCreateComponent implements OnInit {
 
   videoGroup: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder) {
+  constructor(private router: Router, private fb: FormBuilder,
+              private videoService: VideoService) {
     this.videoGroup = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(4)]],
-      about: ['', Validators.required]
     });
 
   }
@@ -24,6 +26,16 @@ export class VideoCreateComponent implements OnInit {
   }
   back() {
     this.router.navigateByUrl('/videos');
+  }
+  save() {
+    //videoService
+    const values = this.videoGroup.value;
+    const video: Video = {
+      title: values.title,
+      genres: []
+    };
+    this.videoService.create(video)
+      .subscribe(videoo => console.log(video));
   }
 
 }
