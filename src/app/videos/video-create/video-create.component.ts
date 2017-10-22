@@ -28,6 +28,9 @@ export class VideoCreateComponent implements OnInit {
   back() {
     this.router.navigateByUrl('/videos');
   }
+  closeAlert() {
+    this.videoCreatedSuccessfully = false;
+  }
   save() {
     //videoService
     const values = this.videoGroup.value;
@@ -39,6 +42,9 @@ export class VideoCreateComponent implements OnInit {
       .subscribe(videoo => {
         this.videoGroup.reset();
         this.videoCreatedSuccessfully = true;
+        setTimeout(() =>{
+          this.videoCreatedSuccessfully = false;
+        }, 3000);
       });
   }
 
