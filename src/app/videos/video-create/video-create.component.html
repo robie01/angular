@@ -18,6 +18,7 @@
           <input class="form-control" formControlName="title">
           </label>
           <button
+            [disabled]="videoGroup.invalid"
             type="submit"
             class="btn btn-outline-info">
             <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
