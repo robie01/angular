@@ -17,6 +17,17 @@
           <label class="center-block">Title:
           <input class="form-control" formControlName="title">
           </label>
+          <div *ngIf="videoGroup.controls['title'].invalid
+          && (videoGroup.controls['title'].dirty
+          || videoGroup.controls['title'].touched)"
+               class="alert alert-danger">
+            <div *ngIf="videoGroup.controls['title'].errors.required">
+              Name is required.
+            </div>
+            <div *ngIf="videoGroup.controls['title'].errors.minlength">
+              Name must be at least 4 characters long.
+            </div>
+          </div>
           <button
             [disabled]="videoGroup.invalid"
             type="submit"
