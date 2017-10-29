@@ -15,13 +15,9 @@
       <form (ngSubmit)="save()" [formGroup]="videoGroup" novalidate>
         <div class="form-group">
           <label class="center-block">Title:
-          <input class="form-control" [ngClass]="{'is-invalid': videoGroup.controls['title'].invalid
-          && (videoGroup.controls['title'].dirty
-          || videoGroup.controls['title'].touched)}"
+          <input class="form-control" [ngClass]="{'is-invalid': isInvalid('title')}"
                  formControlName="title">
-            <div *ngIf="videoGroup.controls['title'].invalid
-          && (videoGroup.controls['title'].dirty
-          || videoGroup.controls['title'].touched)"
+            <div *ngIf="isInvalid('title')"
                  class="invalid-feedback">
               <div *ngIf="videoGroup.controls['title'].errors.required">
                 Name is required.

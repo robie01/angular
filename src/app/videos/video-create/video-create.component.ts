@@ -25,6 +25,12 @@ export class VideoCreateComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  isInvalid(controlName: string) {
+
+    const control = this.videoGroup.controls[controlName];
+    return control.invalid && (control.touched || control.dirty);
+  }
   back() {
     this.router.navigateByUrl('/videos');
   }
