@@ -15,7 +15,9 @@
       <form (ngSubmit)="save()" [formGroup]="videoGroup" novalidate>
         <div class="form-group">
           <label class="center-block">Title:
-          <input class="form-control" [ngClass]="{'is-invalid': isInvalid('title')}"
+          <input class="form-control" placeholder="(-PLACEHOLDER)" [ngClass]="{
+          'is-invalid': isInvalid('title'),
+          'is-valid' : isValid('title')}"
                  formControlName="title">
             <div *ngIf="isInvalid('title')"
                  class="invalid-feedback">

@@ -27,10 +27,16 @@ export class VideoCreateComponent implements OnInit {
   }
 
   isInvalid(controlName: string) {
-
     const control = this.videoGroup.controls[controlName];
     return control.invalid && (control.touched || control.dirty);
   }
+  isValid(controlName: string) {
+
+    const control = this.videoGroup.controls[controlName];
+    return !control.invalid && (control.touched || control.dirty);
+  }
+
+
   back() {
     this.router.navigateByUrl('/videos');
   }
